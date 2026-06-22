@@ -1281,6 +1281,20 @@
       sparkline3.render();
     </script>
     <!--end::Script-->
+    <script>
+        const berkasPendukung = document.getElementById('berkas_pendukung');
+        const previewFile = document.getElementById('preview-file');
+
+        if (berkasPendukung) {
+            berkasPendukung.addEventListener('change', function () {
+                if (this.files.length > 0) {
+                    previewFile.innerHTML = 'File dipilih: <strong>' + this.files[0].name + '</strong>';
+                } else {
+                    previewFile.innerHTML = '';
+                }
+            });
+        }
+    </script>
   </body>
   <!--end::Body-->
 </html>

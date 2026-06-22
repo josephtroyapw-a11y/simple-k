@@ -21,5 +21,5 @@ Route::middleware(['guest'])->group(function(){
 Route::middleware(['auth'])->group(function(){
     Route::resource('surat', SuratController::class);
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-    
+    Route::get('/surat/{id}/cetak', [SuratController::class, 'cetakPdf'])->name('surat.cetak');
 });
